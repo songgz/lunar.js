@@ -42,6 +42,8 @@ function Lunar() {
 			
 			// Divide by the length of an average synodic month:
 			jd = this.julianDay / 29.53;
+			
+			// Tip of the hat: http://voidware.com/moon_phase.htm
 			this.phase = ((jd - Math.floor(jd)) * 8 + 0.5) & 7;
 		}
 
@@ -107,14 +109,13 @@ var lunar = new Lunar();
 // get an array of moon objects representing a given interval
 var interval = lunar.getInterval({
 	from: {
-		day: '25',
 		month: '12',
+		day: '25',
 		year: '2012'
 	},
 	to: {
-		day: '10',
 		month: '1',
+		day: '10',
 		year: '2013'
 	}
 });
-//@ sourceURL=lunar.js
